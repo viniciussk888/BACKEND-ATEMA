@@ -3,21 +3,21 @@
 const Atema = use('App/Models/Atema')
 
 class AtemaController {
-  async index({ request, response, view }) {
+  async index({ }) {
     const atemas = await Atema.all();
 
     return atemas
   }
-  async store({ request, response }) {
+  async store({ request }) {
     const data = request.all()
     const atema = await Atema.create(data)
     return atema;
   }
-  async show({ params, request, response, view }) {
+  async show({ params }) {
     const atema = await Atema.findOrFail(params.id)
     return atema
   }
-  async update({ params, request, response }) {
+  async update({ params, request }) {
     const atema = await Atema.findOrFail(params.id)
     const data = request.all()
 
@@ -27,7 +27,7 @@ class AtemaController {
 
     return atema
   }
-  async destroy({ params, request, response }) {
+  async destroy({ params }) {
     const atema = await Atema.findOrFail(params.id)
 
     await atema.delete()

@@ -11,6 +11,7 @@ Route.post('passwords', 'ForgotPasswordController.store')
 
 Route.group(() => {
   Route.resource('atema', 'AtemaController').apiOnly()
+  Route.resource('post', 'PostController').apiOnly()
 }).middleware(['auth'])
 
 
