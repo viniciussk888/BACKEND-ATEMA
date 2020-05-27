@@ -27,19 +27,6 @@ class AtemaController {
 
     return atema
   }
-  async filter({ params, request, response }) {
-    const { mesorregiao, microrregiao, municipio } = request.body
-    if (municipio) {
-      const atema = await Atema.findByOrFail('municipio', municipio)
-      return atema
-    }
-    if (microrregiao) {
-      const atema = await Atema.findByOrFail('microrregiao', microrregiao)
-      return atema
-    }
-    const atema = await Atema.findByOrFail('mesorregiao', mesorregiao)
-    return atema
-  }
   async destroy({ params }) {
     const atema = await Atema.findOrFail(params.id)
 

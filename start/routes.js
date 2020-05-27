@@ -5,7 +5,7 @@ const Route = use('Route')
 
 
 Route.post('sessions', 'SessionController.store');
-Route.post('atemafilter', 'AtemaController.filter');
+Route.post('filter', 'FilterController.filter');
 //recuperar senha
 //Route.post('passwords', 'ForgotPasswordController.store')
 //ATEMA
