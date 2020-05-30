@@ -29,10 +29,25 @@ class ForgotPasswordController {
       const token = request.input('token')
       const user = await User.findByOrFail('token', token)
 
-      return user
+      return user.id
     } catch (error) {
       return response.status(error.status).send({ error: { message: 'Erro ao validar o código!' } })
     }
+  }
+  async update({ request, response }) {
+    try {
+      const { token, newPassword } = request.all()
+      const user = await User.findByOrFail('token', token)
+      user.token = null
+      user.token_created_at = null
+      user.password = newPassword;
+
+      await user.save()
+
+    } catch (error) {
+      return response.status(error.status).send({ error: { message: 'Algo não deu certo ao resetar sua senha!' } })
+    }
+
   }
 }
 

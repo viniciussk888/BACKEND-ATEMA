@@ -7,7 +7,8 @@ const Route = use('Route')
 Route.post('sessions', 'SessionController.store');
 Route.post('filter', 'FilterController.filter');
 Route.post('passwords', 'ForgotPasswordController.store')
-Route.get('passwords/:id', 'ForgotPasswordController.store')
+Route.post('validate', 'ForgotPasswordController.validate')
+Route.put('passwords', 'ForgotPasswordController.update')
 //ATEMA
 
 Route.group(() => {
@@ -16,6 +17,10 @@ Route.group(() => {
   Route.delete('users/:id', 'UserController.destroy');
   Route.resource('atema', 'AtemaController').apiOnly()
   Route.resource('post', 'PostController').apiOnly()
+  Route.resource('elemento', 'ElementoController').apiOnly()
+  Route.resource('lingua', 'LinguaController').apiOnly()
+  Route.resource('etimologia', 'EtimologiaController').apiOnly()
+  Route.resource('taxonomia', 'TaxonomiaController').apiOnly()
 }).middleware(['auth'])
 
 
