@@ -9,6 +9,7 @@ Route.post('filter', 'FilterController.filter');
 Route.post('passwords', 'ForgotPasswordController.store')
 Route.post('validate', 'ForgotPasswordController.validate')
 Route.put('passwords', 'ForgotPasswordController.update')
+Route.get('files/:id', 'FileController.show');
 //ATEMA
 
 Route.group(() => {
@@ -21,6 +22,7 @@ Route.group(() => {
   Route.resource('lingua', 'LinguaController').apiOnly()
   Route.resource('etimologia', 'EtimologiaController').apiOnly()
   Route.resource('taxonomia', 'TaxonomiaController').apiOnly()
+  Route.post('files', 'FileController.store')
 }).middleware(['auth'])
 
 
