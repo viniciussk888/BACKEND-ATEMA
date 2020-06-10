@@ -10,6 +10,8 @@ Route.post('passwords', 'ForgotPasswordController.store')
 Route.post('validate', 'ForgotPasswordController.validate')
 Route.put('passwords', 'ForgotPasswordController.update')
 Route.get('files/:id', 'FileController.show');
+Route.resource('post', 'PostController').apiOnly()
+Route.post('relate', 'RelateController.relate');
 //ATEMA
 
 Route.group(() => {
@@ -17,7 +19,6 @@ Route.group(() => {
   Route.get('users', 'UserController.index');
   Route.delete('users/:id', 'UserController.destroy');
   Route.resource('atema', 'AtemaController').apiOnly()
-  Route.resource('post', 'PostController').apiOnly()
   Route.resource('elemento', 'ElementoController').apiOnly()
   Route.resource('lingua', 'LinguaController').apiOnly()
   Route.resource('etimologia', 'EtimologiaController').apiOnly()
