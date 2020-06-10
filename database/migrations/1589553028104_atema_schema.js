@@ -17,6 +17,7 @@ class AtemaSchema extends Schema {
       table.string('area')
       table.string('linguaOrigem')
       table.string('etimologia')
+      table.string('etimologiaEsc')
       table.string('taxionomia')
       table.string('estruturaMorfologica')
       table.string('referencias')
