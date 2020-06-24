@@ -9,7 +9,7 @@ class PostSchema extends Schema {
       table.increments()
       table.string('title').notNullable()
       table.string('image')
-      table.string('content').notNullable()
+      table.string('content', 10000).notNullable()
       table.string('author').notNullable()
       table.timestamps()
     })
