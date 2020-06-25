@@ -12,10 +12,11 @@ Route.put('passwords', 'ForgotPasswordController.update')
 Route.get('files/:id', 'FileController.show');
 Route.resource('post', 'PostController').apiOnly()
 Route.post('relate', 'RelateController.relate');
+Route.post('users', 'UserController.store');
 //ATEMA
 
 Route.group(() => {
-  Route.post('users', 'UserController.store');
+  // Route.post('users', 'UserController.store');
   Route.get('users', 'UserController.index');
   Route.delete('users/:id', 'UserController.destroy');
   Route.resource('atema', 'AtemaController').apiOnly()
