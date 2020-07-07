@@ -3,7 +3,9 @@
 
 const Route = use('Route')
 
-
+Route.get('/', () => {
+  return "base"
+});
 Route.post('sessions', 'SessionController.store');
 Route.post('filter', 'FilterController.filter');
 Route.post('passwords', 'ForgotPasswordController.store')
